@@ -9,10 +9,10 @@ while read line; do
 	ip=`echo "$line" | cut -d ' ' -f 6`
 	por=`echo "$line" | cut -d ' ' -f 8`
 	query="select hacker_id from hack.hackers where hacker_ip=\"${ip}\""
-	id=$(mysql --password="ryemryem50486478dr" -B --disable-column-names -e "${query}" 2> /dev/null )
+	id=$(mysql --password="your_password" -B --disable-column-names -e "${query}" 2> /dev/null )
 	if [ -n "$id" ]; then
         query="insert into hack.methods (hacker_id, username, port) values (${id},\"${usr}\",${por})"
-        mysql --password="ryemryem50486478dr" -e "${query}" 2> /dev/null && let "cpt++"
+        mysql --password="your_password" -e "${query}" 2> /dev/null && let "cpt++"
 	fi
 done < temp
 
