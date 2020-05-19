@@ -5,10 +5,10 @@ cpt=0
 while read line; do
 line=${line##*( )}
 query="select hacker_id from hack.hackers where hacker_ip=\"${line}\""
-var=$(mysql --password="ryemryem50486478dr" -B --disable-column-names -e "${query}" 2> /dev/null )
+var=$(mysql --password="your_password" -B --disable-column-names -e "${query}" 2> /dev/null )
 if [ -z "$var" ]; then
 	query="insert into hack.hackers (hacker_ip) values (\"${line}\")"
-	mysql --password="ryemryem50486478dr" -e "${query}" 2> /dev/null && let "cpt++"
+	mysql --password="your_password" -e "${query}" 2> /dev/null && let "cpt++"
 fi
 done < temp.txt
 
