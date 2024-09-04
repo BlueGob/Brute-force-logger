@@ -15,6 +15,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS hack;
+
+-- Switch to the created database
+USE hack;
 --
 -- Temporary table structure for view `current_count`
 --
