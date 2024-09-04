@@ -10,7 +10,7 @@ query="select hacker_id from hack.hackers where hacker_ip=\"${line}\""
 var=$(mysql -u$user -p$pass -B --disable-column-names -e "${query}" 2> /dev/null )
 if [ -z "$var" ]; then
 	query="insert into hack.hackers (hacker_ip) values (\"${line}\")"
-	mysql -p3asba -e "${query}" 2> /dev/null && let "cpt++"
+	mysql -p$pass -e "${query}" 2> /dev/null && let "cpt++"
 fi
 done < temp.txt
 

@@ -18,6 +18,6 @@ do
 	city=`cut iptemp -d ';' -f 2`
 	timezone=`cut iptemp -d ';' -f 3`
 	queryins="update hack.hackers set country = \"${country}\", city = \"${city}\", timezone = \"${timezone}\" where hacker_id=${i}"
-	mysql -p3asba -e "${queryins}" 2>> /dev/null
+	mysql -p$pass -e "${queryins}" 2>> /dev/null
 done
 rm iptemp
